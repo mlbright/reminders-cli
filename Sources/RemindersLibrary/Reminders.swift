@@ -97,8 +97,6 @@ public final class Reminders {
     {
         let predicate = Store.predicateForReminders(in: [calendar])
         Store.fetchReminders(matching: predicate) { reminders in
-            let reminders = reminders?
-                .filter { !$0.isCompleted }
             completion(reminders ?? [])
         }
     }
